@@ -1,8 +1,7 @@
-from dessert import (Cookie)
+from dessert import DessertItem,Cookie
 
 
 def test_Cookie():
-    testcookie = Cookie("snickerdoodle",6,1.20)
-    assert testcookie.name == "snickerdoodle"
-    assert testcookie.cookie_quantity == 6
-    assert testcookie.price_per_dozen == 1.20
+    test = Cookie("snickerdoodle",6,1.20)
+    assert test.calculate_cost() == test.price_per_dozen*(test.cookie_quantity/12)
+    assert test.calculate_tax() == test.calculate_cost()*(test.tax_percent/100)

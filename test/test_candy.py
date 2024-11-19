@@ -1,8 +1,8 @@
-from dessert import (Candy)
+from dessert import DessertItem, Candy
 
 
 def test_Candy():
-    testcandy = Candy("snickers",3.5,1.60)
-    assert testcandy.name == "snickers"
-    assert testcandy.candy_weight == 3.5
-    assert testcandy.price_per_pound == 1.60
+    test = Candy("snickers",3.5,1.60)
+    assert test.calculate_cost() == test.candy_weight*test.price_per_pound
+    assert test.calculate_tax() == test.calculate_cost()*(test.tax_percent/100)
+
