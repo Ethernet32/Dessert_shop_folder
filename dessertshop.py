@@ -22,14 +22,14 @@ class DessertShop():
         type = input("Enter the type of ice cream: ")
         quantity = input("Enter the number of scoops: ")
         price = input("Enter the price per scoop: ")
-        return Candy(type,int(quantity),float(price))
+        return IceCream(type,int(quantity),float(price))
     def user_prompt_sundae(self):
         type = input("Enter the type of ice cream: ")
         quantity = input("Enter the number of scoops: ")
         price = input("Enter the price per scoop: ")
         topping = input("Enter the topping: ")
         tprice = input("Enter the price for the topping: ")
-        return Candy(type,int(quantity),float(price), topping, float(tprice))
+        return Sundae(type,int(quantity),float(price), topping, float(tprice))
 
 class Order():
     def __init__(self):
@@ -106,7 +106,7 @@ def main():
                 print('Invalid response: Please enter a choice from the menu (1-4) or Enter')
     print()
     DATA = [ 
-        [ "Name" , "Price", "Tax"]
+        [ "Name", "Quantity", "Unit Price", "Cost", "Tax"]
     ]
     for item in order.order:
         DATA.append([item.name,"$"+str(round(item.calculate_cost(),2)), "$"+str(round(item.calculate_tax(),2)) ])

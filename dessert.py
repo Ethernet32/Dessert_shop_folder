@@ -58,4 +58,4 @@ class Sundae(IceCream):
         return self.scoop_count*self.price_per_scoop+ self.topping_price
     
     def __str__(self):
-        return f"{self.name}, {self.scoop_count}, ${self.price_per_scoop}/lb, {self.topping_name}, {self.topping_price}, ${self.calculate_cost}, {self.calculate_tax()}"
+        return f"{self.topping_name, self.name} Sundae, {self.scoop_count}, ${self.price_per_scoop}/lb, {self.topping_name}, {self.topping_price}, ${self.calculate_cost}, {self.calculate_tax()}"
