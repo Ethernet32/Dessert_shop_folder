@@ -50,6 +50,15 @@ class Order():
             total+= dessert.calculate_tax()
         return round(total,2)
 
+    def __len__(self):
+        return len(self.order)
+    
+    def __str__(self):
+        return_list = ""
+        for item in self.order:
+            return_list += str(item)
+            return_list += "\n"
+        return return_list
 
 def main():
     shop = DessertShop()
@@ -103,6 +112,6 @@ def main():
         DATA.append([item.name,"$"+str(round(item.calculate_cost(),2)), "$"+str(round(item.calculate_tax(),2)) ])
     DATA.append(["Subtotal", "$"+str(round(order.order_cost(),2)), "$"+str(round(order.order_tax(),2))])
     DATA.append(["Total", "", "$"+str(round(order.order_cost()+order.order_tax(),2))]) 
-    DATA.append(["Total items in the order","", len(order), ])
+    DATA.append(["Total items in the order","", order.__len__(), ])
     make_receipt(DATA,"reciept.pdf")
 main()
