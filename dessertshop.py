@@ -110,13 +110,13 @@ def main():
     ]
     for item in order.order:
         if isinstance(item , Candy):
-            DATA.append([item.name, str(item.candy_weight)+"lbs", "$"+str(round(item.price_per_pound,2)),"$"+str(round(item.calculate_cost(),2)), "$"+str(round(item.calculate_tax(),2)) ])
+            DATA.append([item.name+"(Bag)", str(item.candy_weight)+"lbs", "$"+str(round(item.price_per_pound,2)),"$"+str(round(item.calculate_cost(),2)), "$"+str(round(item.calculate_tax(),2)) ])
         elif isinstance(item , Cookie):
-            DATA.append([item.name, str(item.cookie_quantity)+" cookies", "$"+str(round(item.price_per_dozen,2))+"/dozen","$"+str(round(item.calculate_cost(),2)), "$"+str(round(item.calculate_tax(),2)) ])
+            DATA.append([item.name+"(Bag)", str(item.cookie_quantity)+" cookies", "$"+str(round(item.price_per_dozen,2))+"/dozen","$"+str(round(item.calculate_cost(),2)), "$"+str(round(item.calculate_tax(),2)) ])
         elif isinstance(item , IceCream):
-            DATA.append([item.name, str(item.scoop_count)+" scoops", "$"+str(round(item.price_per_scoop,2))+"/scoop","$"+str(round(item.calculate_cost(),2)), "$"+str(round(item.calculate_tax(),2)) ])
+            DATA.append([item.name+"(Bowl)", str(item.scoop_count)+" scoops", "$"+str(round(item.price_per_scoop,2))+"/scoop","$"+str(round(item.calculate_cost(),2)), "$"+str(round(item.calculate_tax(),2)) ])
         elif isinstance(item , Sundae):
-            DATA.append([item.topping_name +" "+ item.name + " sundae", str(item.scoop_count)+" scoops", "$"+str(round(item.price_per_scoop,2))+"/scoop","$"+str(round(item.calculate_cost(),2)), "$"+str(round(item.calculate_tax(),2)) ])
+            DATA.append([item.topping_name+"(Boat)" +" "+ item.name + " sundae", str(item.scoop_count)+" scoops", "$"+str(round(item.price_per_scoop,2))+"/scoop","$"+str(round(item.calculate_cost(),2)), "$"+str(round(item.calculate_tax(),2)) ])
             DATA.append([item.topping_name, 1, "$"+str(round(item.topping_price,2))])
             
     DATA.append(["Subtotal", "", "", "$"+str(round(order.order_cost(),2)), "$"+str(round(order.order_tax(),2))])
